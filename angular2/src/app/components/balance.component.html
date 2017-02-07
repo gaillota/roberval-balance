@@ -1,0 +1,25 @@
+<div class="balance">
+  <div class="balls">
+    <div class="ball"
+         *ngFor="let ball of balls"
+         [class.selected]="ball === selectedBall"
+         (click)="onSelect(ball)">
+      <span class="index">{{ball.index + 1}}</span>
+      <span class="weight">{{ball.weight}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="controls">
+      <button class="button reset" (click)="reset()">Reset</button>
+      <button class="button run" (click)="findBall()">Run</button>
+    </div>
+  </div>
+  <div class="error" *ngIf="error">
+    {{error}}
+  </div>
+  <div class="result" *ngIf="result">
+    <h3>Results</h3>
+    <p>Ball {{result.ball.index + 1}} is the heaviest !</p>
+    <p>Found in {{result.round}} rounds.</p>
+  </div>
+</div>
