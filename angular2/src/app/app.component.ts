@@ -8,5 +8,5 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   name = 'Roberval Balance';
-  ballsCount = 8;
+  balls = 8;
 }

@@ -26,12 +26,7 @@ const balance = (left: number, right: number): Labels => {
  * @param balls
  * @returns {number}
  */
-const weight = (balls: Ball[]): number => {
-  let weight: number = 0;
-  balls.forEach(b => weight += b.weight);
-
-  return weight;
-};
+const weight = (balls: Ball[]): number => balls.reduce((i, j) => i + j.weight, 0);
 
 /**
  * Main function
